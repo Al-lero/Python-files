@@ -1,12 +1,17 @@
-WINNING = 5
+import random
 
-for number in range (3):
-	
-	user_input = int(input("Enter guess number "))
-	if user_input == WINNING:
-		print("You won")
+LUCKYNUMBER = random.randrange(1,10)
+
+
+number = int(input("Enter guess number "))
+
+while number != LUCKYNUMBER:
+	guess_number = int(input("Enter guess number "))
+	if guess_number == LUCKYNUMBER:
+		print("You won")  
 		break
-	if user_input != WINNING:
+	else:
 		print("Try Again")
+
 
 
