@@ -1,5 +1,7 @@
-for i in range(1, n + 1):
-	print("*"(n-i)," ")
-	print(("*" * i) + (i * "*"))
+number = 5
+for i in range(0,number):
+	for j in range(0, i + 1):
+		print("*", end=' ')
+	print("\r")
+	
 
-print(5)
