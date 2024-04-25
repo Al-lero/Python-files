@@ -1,6 +1,6 @@
 def find_minimum(numbers):
 
-	minimum = nuber[0]	
+	minimum = number[0]	
 	for i in number:
 		if i < minimum:
 			minimum = i
