@@ -4,68 +4,81 @@ discount = 0
 sub_total = 0
 balance = 0
 amount_paid = 0
-pieces = 0
-unit = 0
-buy = 0
+price = 0
+quantity = 0
+sub_total = 0
+bill_total = 0
+VAT = 17.50
+amount_paid = 0
+continue_shopping = 0
+result = 0
 
 
 
-sub_total += pieces * unit
-VAT = (sub_total * 17.50) / 100
-bill_total = sub_total + VAT - discount
-balance = amount_paid - bill_total
-discount = (sub_total * discount) / 100
 
+
+
+		
+
+mylist = []
 
 customer_name = input("Enter customer's name : ")
 
 cashier_name = input("Enter Cashier's name: ")
 
 
-buy = input("what do you want to buy?: ")
+item = input("what do you want to buy?: ")
+mylist.append(0)
 
-pieces = input("How many pieces? : ")
+quantity = int(input("How many pieces?: "))
+mylist.append(0)
 
-unit = input("How much per unit[]: " )
+price = float(input("How much per unit: " ))
+mylist.append(0)
 
+result = (quantity * price)
+sub_total += result
+VAT = (sub_total * 17.50) / 100	
+bill_total = sub_total + VAT - discount
+balance = (amount_paid - bill_total)
 
+							
 
 while continue_shopping == input("Do you want to buy something else? (yes/no)? : "):
-	buy
-	continue_shopping = buy
+	mylist.append(shopping)
+	
+if (continue_shopping == "yes"):
+	yes == input("Do you want to buy something else? (yes/no)? : ")
+	continue_shopping
+	mylist.append("\t" + item + "\t" + quantity + "\t" + price + "\t" + (quantity * price))
 
-if (continue_shopping.casefold("yes")):
-	break
-
-elif (continue_shopping.casefold("no")):
-	break
 
 else:
 
-		discount = int(input("How much discount : "))
-		
-			
+
+	discount = int(input("How much discount : "))
+	discount = (sub_total * discount) / 100	
 
 print("WELCOME TO SEMICOLON STORE\n\nMAIN BRANCH\n\nLOCATION: 312, HERBERT MARCAULY WAY, SABO YABA LAGOS.\n\nTEL:09014465195")
-print("Cashier's Name: "+ name);
-print("Customer name: " + customerName);
+print("Cashier's Name: "+ cashier_name);
+print("Customer name: " + customer_name);
 print("====================================================")
 print("\tITEM\tQTY\tPRICE\tTOTAL(NGN)")
 print("\n---------------------------------------------------")
-print("\t" + buy + "\t" + pieces + "\t" + unit + "\t" + pieces * unit )
-print("\nSubTotal: " + subTotal)
-print("\n---------------------------------------------------")
-print("Discount: " + discount)
-print("\nVAT: " + VAT)
-print("\nBill Total: " + billTotal)
+
+print(mylist)
+print("\t",item, "/t",quantity,  "/t",price, + (quantity * price))
+print("\nSubTotal: ",  sub_total)
+print("\n---------------------------------------------------")		
+print("Discount: ", discount)
+print("\nVAT: ", VAT)
+print("\nBill Total: ", bill_total)
 print("\n====================================================")
-print("THIS IS NOT AN RECEIPT KINDLY PAY: " + billTotal);
+print("THIS IS NOT AN RECEIPT KINDLY PAY: " , bill_total);
 amount = input("How much did the Customer give to you: ")
-print(amount)
-print("\nBalance: " + (amountPaid - billTotal))
+print(amount_paid)
+print("\nBalance: ", balance)
+
 print("\n====================================================")
 print("THANK YOU FOR YOUR PATRONAGE")
-			
-
-
 
