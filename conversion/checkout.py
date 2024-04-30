@@ -78,9 +78,11 @@ print("Customer name: " + customer_name);
 print("====================================================")
 print("\tITEM\tQTY\tPRICE\tTOTAL(NGN)")
 print("\n---------------------------------------------------")
-for i in (item_list):
-	if item_list.index(i):
-		print(i)
+for items in item_list:
+	print("\t"+ str(element) + "   ", end = "  ")
+	total_for_items = items[1] * items[2]
+	total_price += total_for_items
+	print(str(total_for_items
 
 print("\t",item, "/t",quantity,  "/t",price, + (quantity * price))
 print("\nSubTotal: ",  sub_total)
