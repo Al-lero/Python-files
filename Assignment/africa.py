@@ -1,0 +1,7 @@
+print('Nigeria','and','Africa')
+
+
+
+
+
+
